@@ -8,7 +8,6 @@
       body {
         font-family: Arial, sans-serif;
         background: #f5f5f5;
-        padding: 20px;
       }
       .header {
         text-align: center;
@@ -20,18 +19,10 @@
 
       .controls {
         background: rgb(216, 222, 222);
-        padding: 20px;
+        padding: 15px;
         border-radius: 16px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-
-      select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
+        margin-bottom: 15px;
       }
 
       .flex-preview {
@@ -39,12 +30,11 @@
         padding: 20px;
         border-radius: 16px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
 
       #container {
         display: flex;
-        min-height: 200px;
         gap: 16px;
         padding: 10px;
         transition: 0.2s ease;
@@ -76,6 +66,7 @@
   <body>
     <div class="container">
       <h1 class="header">Flexbox Playground</h1>
+
       <div
         class="controls"
         style="display: flex; flex-direction: column; gap: 15px"
@@ -140,7 +131,20 @@
         flexbox.style.flexDirection = direction.value;
         flexbox.style.justifyContent = justify.value;
         flexbox.style.alignItems = align.value;
-        cssOutput.textContent = `#container {\n  display: flex;\n  flex-direction: ${direction.value};\n  justify-content: ${justify.value};\n  align-items: ${align.value};\n}`;
+
+        if (direction.value === "row" || direction.value === "row-reverse") {
+          flexbox.style.height = "150px";
+        } else {
+          flexbox.style.height = "500px";
+        }
+
+        cssOutput.textContent = `#container {
+                display: flex;
+                flex-direction: ${direction.value};
+                justify-content: ${justify.value};
+                align-items: ${align.value};
+                height: ${flexbox.style.height};
+              }`;
       }
 
       direction.addEventListener("change", updateStyles);
