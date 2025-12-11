@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Responsive Accordion Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .tabs-container {
+      width: 100%;
+      max-width: 600px;
+      background-color: rebeccapurple;
+      
+    }
+
+  
+    input[type="radio"] {
+      display: none;
+    }
+
+
+
+    .tab-label {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      margin: 0 5px;
+      text-align: center;
+      transition: background 0.3s;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab-label:hover {
+      background: #e0e0e0;
+    }
+
+   
+    input[type="radio"]:checked + .tab-label {
+      background: #fff;
+      border-top: 2px solid #007BFF;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+    }
+
+ 
+    .tab-content {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: none;
+      border-radius: 0 0 5px 5px;
+      background: #fff;
+    }
+
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3 {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .tab-labels {
+        flex-direction: column;
+        border-bottom: none;
+        align-items: stretch;
+      }
+
+      .tab-label {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+        padding-left: 15px;
+      }
+
+      input[type="radio"]:checked + .tab-label {
+        border-left: 4px solid #007BFF;
+        border-top: none;
+        background: #f1f1f1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs-container">
+
+    <!-- Radio buttons for tabs -->
+    <input type="radio" name="tabs" id="tab1" checked>
+    <label class="tab-label" for="tab1">Lorem ipsum</label>
+
+    <input type="radio" name="tabs" id="tab2">
+    <label class="tab-label" for="tab2">Lorem ipsum dolor sit amet</label>
+
+    <input type="radio" name="tabs" id="tab3">
+    <label class="tab-label" for="tab3">Lorem</label>
+
+    <!-- Tab contents -->
+    <div class="tab-content" id="content1">
+      Content for Tab 1 goes here.
+    </div>
+    <div class="tab-content" id="content2">
+      Content for Tab 2 goes here.
+    </div>
+    <div class="tab-content" id="content3">
+      Content for Tab 3 goes here.
+    </div>
+
+  </div>
+
+</body>
+</html>
