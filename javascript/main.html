@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tailwind + JS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-10 bg-gray-100">
+
+  <button
+    id="btn"
+    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+  >
+    Click me
+  </button>
+
+  <p id="text" class="mt-4 hidden text-green-600 font-semibold">
+    Button clicked!
+  </p>
+  <div class="flex bg-blue-500 ">ello</div>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const text = document.getElementById("text");
+
+    btn.addEventListener("click", () => {
+      text.classList.toggle("hidden");
+    });
+    
+  </script>
+
+</body>
+</html>
