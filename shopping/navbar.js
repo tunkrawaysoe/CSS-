@@ -8,7 +8,7 @@ export function renderNavBar() {
         <div class="flex items-center space-x-8">
           <div class="text-xl font-bold text-indigo-600">MyApp</div>
           <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
-            <li><a href="#" class="hover:text-indigo-600">Home</a></li>
+            <li><a href="http://127.0.0.1:5500/shopping/home.html" class="hover:text-indigo-600">Home</a></li>
             <li><a href="#" class="hover:text-indigo-600">Shop</a></li>
             <li><a href="#" class="hover:text-indigo-600">Contact Us</a></li>
           </ul>

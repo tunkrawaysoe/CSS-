@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <div class="flex flex-col pt-20 max-w-5xl mx-auto">
+        <h1 class="font-bold text-2xl mb-2">Order summary</h1>
+
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-6">
+
+            <!-- LEFT: Cart Items -->
+            <div class="js-cart-items w-[600px] space-y-2">
+
+                <!-- Cart Item 1 -->
+                <div class="flex justify-between items-center js-cart-item" data-price="50">
+                    <!-- Product Info -->
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
+                            class="h-20 w-20 rounded object-cover">
+                        <div class="flex flex-col justify-center h-full">
+                            <p class="font-semibold text-lg">Shirt</p>
+                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- Price & Quantity Column -->
+                    <div class="flex flex-col items-end">
+                        <div class="text-gray-700 font-semibold mb-2">$50</div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
+                            <span class="js-quantity text-lg">1</span>
+                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="flex justify-between items-center js-cart-item" data-price="50">
+                    <!-- Product Info -->
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
+                            class="h-20 w-20 rounded object-cover">
+                        <div class="flex flex-col justify-center h-full">
+                            <p class="font-semibold text-lg">Shirt</p>
+                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- Price & Quantity Column -->
+                    <div class="flex flex-col items-end">
+                        <div class="text-gray-700 font-semibold mb-2">$50</div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
+                            <span class="js-quantity text-lg">1</span>
+                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center js-cart-item" data-price="50">
+                    <!-- Product Info -->
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
+                            class="h-20 w-20 rounded object-cover">
+                        <div class="flex flex-col justify-center h-full">
+                            <p class="font-semibold text-lg">Shirt</p>
+                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- Price & Quantity Column -->
+                    <div class="flex flex-col items-end">
+                        <div class="text-gray-700 font-semibold mb-2">$50</div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
+                            <span class="js-quantity text-lg">1</span>
+                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center js-cart-item" data-price="50">
+                    <!-- Product Info -->
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
+                            class="h-20 w-20 rounded object-cover">
+                        <div class="flex flex-col justify-center h-full">
+                            <p class="font-semibold text-lg">Shirt</p>
+                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
+                        </div>
+                    </div>
+
+                    <!-- Price & Quantity Column -->
+                    <div class="flex flex-col items-end">
+                        <div class="text-gray-700 font-semibold mb-2">$50</div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
+                            <span class="js-quantity text-lg">1</span>
+                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- RIGHT: Summary -->
+            <div class="bg-white w-full lg:w-[300px] p-4 rounded shadow space-y-4">
+                <h2 class="text-xl font-semibold mb-4">Delivery</h2>
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span class="js-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Taxes (10%)</span>
+                    <span class="js-taxes">$0.00</span>
+                </div>
+                <div class="flex justify-between font-bold text-lg">
+                    <span>Total</span>
+                    <span class="js-total">$0.00</span>
+                </div>
+
+                <!-- Checkout Button -->
+                <button class="w-full py-2 bg-[#714e62] text-white rounded hover:bg-indigo-700 js-checkout">
+                    Checkout
+                </button>
+
+                <!-- "or" separator -->
+                <div class="text-center text-[#714e62] font-semibold">or</div>
+
+                <!-- Continue Shopping Button -->
+                <button class="w-full text-[#714e62] rounded hover:bg-gray-100 js-continue font-bold">
+                    < Continue Shopping
+                </button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script type="module" src="./cart.js"></script>
+</body>
+
+</html>

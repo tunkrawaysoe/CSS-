@@ -1,7 +1,9 @@
 import { products } from "./data/products.js";
 import { renderNavBar } from "./navbar.js";
 
-document.body.insertAdjacentHTML("afterbegin", renderNavBar());
+const navBarHtml= `${renderNavBar()}`
+
+document.querySelector('.js-navbar').innerHTML=navBarHtml
 
 let productHtml = "";
 products.forEach((product) => {

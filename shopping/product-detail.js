@@ -18,42 +18,34 @@ const colorImages = [
 
 const html = `
   ${renderNavBar()}
-  <div class="p-20 js-product-detail-container">
-    <h2 class="text-gray-600 js-breadcrumb">All Products / ${
-      product.name
-    }</h2>
+  <div class="p-6 md:p-20 js-product-detail-container">
+    <h2 class="text-gray-600 font-bold js-breadcrumb mb-4">All Products / ${product.name}</h2>
 
-    <div class="bg-green-100 flex rounded-lg grid grid-cols-1 md:grid-cols-2 py-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
 
       <!-- LEFT: Image + Thumbnails -->
-      <div class="flex">
+      <div class="flex gap-4">
+        <!-- Thumbnails -->
         <div class="flex flex-col gap-2 w-20">
           ${colorImages
-            .map(
-              (img, i) =>
-                `<img src="${img}" alt="Color ${
-                  i + 1
-                }" class="w-full h-20 object-cover rounded cursor-pointer js-color-thumb">`
-            )
-            .join("")}
+    .map(
+      (img, i) =>
+        `<img src="${img}" alt="Color ${i + 1}" class="w-full h-20 object-cover rounded cursor-pointer js-color-thumb">`
+    )
+    .join("")}
         </div>
 
-        <div class="flex-1 flex justify-center items-start">
-          <img src="${product.image}" alt="${
-  product.name
-}" class="object-cover rounded w-full max-w-[420px] h-[420px] js-product-image" />
+        <!-- Main Image -->
+        <div class="flex-1 flex justify-center items-center">
+          <img src="${product.image}" alt="${product.name}" class="object-cover rounded w-full max-w-[420px] h-[420px] js-product-image" />
         </div>
       </div>
 
       <!-- RIGHT: Product Details -->
       <div class="flex flex-col justify-start space-y-6">
         <div class="space-y-2">
-          <h1 class="text-3xl font-semibold js-product-name">${
-            product.name
-          }</h1>
-          <p class="text-2xl font-bold js-product-price">$${
-            product.price / 100
-          }</p>
+          <h1 class="text-3xl font-semibold js-product-name">${product.name}</h1>
+          <p class="text-2xl font-bold js-product-price">$${product.price / 100}</p>
         </div>
 
         <!-- Quantity + Buttons -->
@@ -73,9 +65,7 @@ const html = `
 
         <!-- Terms -->
         <div class="pt-4 text-sm text-gray-600 border-t space-y-1">
-          <p>• Cash on delivery available</p>
-          <p>• 7 days return policy</p>
-          <p>• Free shipping on orders over $50</p>
+          ${product.terms.map(term => `<p>• ${term}</p>`).join("")}
         </div>
       </div>
     </div>
