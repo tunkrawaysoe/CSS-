@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,103 +9,13 @@
 </head>
 
 <body>
+    <div class="js-navbar"></div>
     <div class="flex flex-col pt-20 max-w-5xl mx-auto">
-        <h1 class="font-bold text-2xl mb-2">Order summary</h1>
-
+        <h1 class="font-bold text-2xl mb-4">Order summary</h1>
         <div class="flex flex-col lg:flex-row justify-between items-start gap-6">
 
             <!-- LEFT: Cart Items -->
             <div class="js-cart-items w-[600px] space-y-2">
-
-                <!-- Cart Item 1 -->
-                <div class="flex justify-between items-center js-cart-item" data-price="50">
-                    <!-- Product Info -->
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
-                            class="h-20 w-20 rounded object-cover">
-                        <div class="flex flex-col justify-center h-full">
-                            <p class="font-semibold text-lg">Shirt</p>
-                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
-                        </div>
-                    </div>
-
-                    <!-- Price & Quantity Column -->
-                    <div class="flex flex-col items-end">
-                        <div class="text-gray-700 font-semibold mb-2">$50</div>
-                        <div class="flex items-center gap-2">
-                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
-                            <span class="js-quantity text-lg">1</span>
-                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cart Item 2 -->
-                <div class="flex justify-between items-center js-cart-item" data-price="50">
-                    <!-- Product Info -->
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
-                            class="h-20 w-20 rounded object-cover">
-                        <div class="flex flex-col justify-center h-full">
-                            <p class="font-semibold text-lg">Shirt</p>
-                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
-                        </div>
-                    </div>
-
-                    <!-- Price & Quantity Column -->
-                    <div class="flex flex-col items-end">
-                        <div class="text-gray-700 font-semibold mb-2">$50</div>
-                        <div class="flex items-center gap-2">
-                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
-                            <span class="js-quantity text-lg">1</span>
-                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center js-cart-item" data-price="50">
-                    <!-- Product Info -->
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
-                            class="h-20 w-20 rounded object-cover">
-                        <div class="flex flex-col justify-center h-full">
-                            <p class="font-semibold text-lg">Shirt</p>
-                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
-                        </div>
-                    </div>
-
-                    <!-- Price & Quantity Column -->
-                    <div class="flex flex-col items-end">
-                        <div class="text-gray-700 font-semibold mb-2">$50</div>
-                        <div class="flex items-center gap-2">
-                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
-                            <span class="js-quantity text-lg">1</span>
-                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center js-cart-item" data-price="50">
-                    <!-- Product Info -->
-                    <div class="flex items-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20" alt="Shirt"
-                            class="h-20 w-20 rounded object-cover">
-                        <div class="flex flex-col justify-center h-full">
-                            <p class="font-semibold text-lg">Shirt</p>
-                            <button class="p-1 px-2 rounded-sm shadow hover:underline js-remove mt-2">Remove</button>
-                        </div>
-                    </div>
-
-                    <!-- Price & Quantity Column -->
-                    <div class="flex flex-col items-end">
-                        <div class="text-gray-700 font-semibold mb-2">$50</div>
-                        <div class="flex items-center gap-2">
-                            <button class="px-3 py-1 shadow rounded js-decrease hover:bg-gray-300">-</button>
-                            <span class="js-quantity text-lg">1</span>
-                            <button class="px-3 py-1 shadow rounded js-increase hover:bg-gray-300">+</button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
             <!-- RIGHT: Summary -->
@@ -138,15 +47,10 @@
                     < Continue Shopping
                 </button>
             </div>
-
-
         </div>
-
     </div>
 
-
-
-    <script type="module" src="./cart.js"></script>
+    <script type="module" src="./script/cartPage.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+export const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 export function renderNavBar() {
   return `
   <nav class="bg-white shadow fixed w-full z-50">
@@ -18,15 +20,15 @@ export function renderNavBar() {
         <div class="flex items-center space-x-3 text-gray-700">
 
           <!-- Cart -->
-          <div class="relative">
-            <button
-              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-indigo-100 text-gray-700">
+        <div class="relative">
+            <a href="cart.html" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-indigo-100 text-gray-700">
               <i class="bi bi-cart text-lg"></i>
-            </button>
+            </a>
             <span
-              class="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center rounded-full text-xs font-semibold bg-[#714e62] text-white">3</span>
+              class="js-cart-quantity absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center rounded-full text-xs font-semibold bg-[#714e62] text-white">
+              0
+            </span>
           </div>
-
           <!-- Search -->
           <button
             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-indigo-100 text-gray-700">
