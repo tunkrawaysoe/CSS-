@@ -1,8 +1,8 @@
-import { cart, updateCartQuantity } from "../data/cart.js";
+import { cart, updateCartQuantity, updateTotals } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { renderNavBar } from "./navbar.js";
 
-const navbarHtml=renderNavBar();
+const navbarHtml = renderNavBar();
 const cartContainer = document.querySelector(".js-cart-items");
 const subtotalEl = document.querySelector(".js-subtotal");
 const taxesEl = document.querySelector(".js-taxes");
@@ -46,24 +46,10 @@ function renderCart() {
     });
 
     cartContainer.innerHTML = cartHtml;
-    updateTotals();
-    setupCartActions(); // Attach event listeners after rendering
+    updateTotals(subtotalEl, taxesEl, totalEl)
+    setupCartActions();
 }
-function updateTotals() {
-    let subtotal = 0;
-    cart.forEach(item => {
-        const product = products.find(p => p.id === item.id);
-        if (!product) return;
-        subtotal += (product.price / 100) * item.quantity;
-    });
 
-    const taxes = subtotal * 0.1;
-    const total = subtotal + taxes;
-
-    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-    taxesEl.textContent = `$${taxes.toFixed(2)}`;
-    totalEl.textContent = `$${total.toFixed(2)}`;
-}
 function setupCartActions() {
     document.querySelectorAll(".js-increase").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -72,7 +58,7 @@ function setupCartActions() {
             cart[index].quantity += 1;
             localStorage.setItem("cart", JSON.stringify(cart));
             renderCart();
-            updateCartQuantity(); // update navbar badge
+            updateCartQuantity();
         });
     });
 
