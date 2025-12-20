@@ -98,7 +98,7 @@ function renderCart() {
       <div class="flex gap-3 items-center">
         <div class="relative">
           <img
-            src="${product.image}"
+            src="${product.images[0]}"
             alt="${product.name}"
             class="w-16 h-16 rounded object-cover"
           />

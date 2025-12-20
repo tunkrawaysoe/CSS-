@@ -11,11 +11,7 @@ if (!product) {
   window.location.href = "index.html";
 }
 
-const colorImages = [
-  product.image,
-  "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
-  "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
-];
+const colorImages = product.images;
 
 const html = `
   ${renderNavBarWithCartQty()}
@@ -41,7 +37,7 @@ const html = `
 
         <div class="flex-1 flex justify-center items-center">
           <img
-            src="${product.image}"
+            src="${product.images[0]}"
             class="js-product-image w-full max-w-[420px] h-[420px] object-cover rounded"
           />
         </div>

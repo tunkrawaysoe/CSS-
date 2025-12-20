@@ -66,15 +66,19 @@ export function renderNavBarWithCartQty() {
   `;
 }
 
-export function updateCartQuantity() {
-    const totalQuantity = cart.reduce((sum, item) => {
-        return sum + item.quantity;
-    }, 0);
+export function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-    const qtyEl = document.querySelector(".js-cart-quantity");
-    if (qtyEl) {
-        qtyEl.textContent = totalQuantity;
-    }
+export function updateCartQuantity() {
+  const totalQuantity = cart.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+
+  const qtyEl = document.querySelector(".js-cart-quantity");
+  if (qtyEl) {
+    qtyEl.textContent = totalQuantity;
+  }
 }
 
 export function addToCart(productId, quantity = 1) {
@@ -86,7 +90,7 @@ export function addToCart(productId, quantity = 1) {
     cart.push({ id: productId, quantity });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  saveCart(cart)
   updateCartQuantity();
 }
 
