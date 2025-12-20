@@ -1,8 +1,7 @@
 import { products } from "../data/products.js";
-import { cart, updateCartQuantity ,addToCart} from "../data/cart.js";
-import { renderNavBar } from "./navbar.js";
+import { updateCartQuantity, addToCart, renderNavBarWithCartQty } from "../data/cart.js";
 
-document.querySelector('.js-navbar').innerHTML = renderNavBar();
+document.querySelector('.js-navbar').innerHTML = renderNavBarWithCartQty();
 
 // Render products
 let productHtml = "";

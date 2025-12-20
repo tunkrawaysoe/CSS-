@@ -1,6 +1,6 @@
 import { products } from "../data/products.js";
-import { cart, addToCart, updateCartQuantity } from "../data/cart.js";
-import { renderNavBar } from "./navbar.js";
+import { cart, addToCart, updateCartQuantity, renderNavBarWithCartQty } from "../data/cart.js";
+
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get("id"));
 const product = products.find(p => p.id === productId);
@@ -18,7 +18,7 @@ const colorImages = [
 ];
 
 const html = `
-  ${renderNavBar()}
+  ${renderNavBarWithCartQty()}
   <div class="p-6 md:p-20 js-product-detail-container">
     <h2 class="text-gray-600 font-bold mb-4">
       All Products / ${product.name}
@@ -87,8 +87,6 @@ document.querySelector(".js-plus").onclick = () => {
   qty++;
   qtyEl.textContent = qty;
 
-
-
 };
 
 document.querySelector(".js-minus").onclick = () => {
@@ -98,7 +96,6 @@ document.querySelector(".js-minus").onclick = () => {
 
   }
 };
-
 
 document.querySelector(".js-add-cart").onclick = () => {
   addToCart(productId, qty);
