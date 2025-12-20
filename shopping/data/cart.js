@@ -1,7 +1,10 @@
 import { products } from "./products.js";
 
-export const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+const storedCart = JSON.parse(localStorage.getItem("cart"));
+export const cart = Array.isArray(storedCart) ? storedCart : [];
+
+console.log(cart)
 export function renderNavBarWithCartQty() {
   return `
   <nav class="bg-white shadow fixed w-full z-50">

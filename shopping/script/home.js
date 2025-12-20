@@ -3,7 +3,6 @@ import { updateCartQuantity, addToCart, renderNavBarWithCartQty } from "../data/
 
 document.querySelector('.js-navbar').innerHTML = renderNavBarWithCartQty();
 
-// Render products
 let productHtml = "";
 products.forEach(product => {
   productHtml += `
