@@ -5,13 +5,11 @@ export function initMobileMenuToggle() {
   console.log(mobileMenu)
 
   if (!menuBtn || !mobileMenu) return;
-
-  // Toggle menu visibility when clicking the menu button
+  
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
   });
 
-  // Optional: close menu when clicking outside
   document.addEventListener("click", (e) => {
     if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
       mobileMenu.classList.add("hidden");

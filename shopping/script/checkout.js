@@ -129,6 +129,6 @@ function renderCart() {
   updateTotals(subtotalEl, taxesEl, totalEl);
 }
 
-initMobileMenuToggle();
 renderCart();
+initMobileMenuToggle();
 updateCartQuantity();
