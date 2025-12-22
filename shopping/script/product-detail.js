@@ -1,5 +1,6 @@
 import { products } from "../data/products.js";
 import { cart, addToCart, updateCartQuantity, renderNavBarWithCartQty } from "../data/cart.js";
+import { initMobileMenuToggle } from "./util.js";
 
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get("id"));
@@ -108,3 +109,5 @@ document.querySelectorAll(".js-color-thumb").forEach(thumb => {
     thumb.classList.add("ring-2", "ring-indigo-600");
   });
 });
+
+initMobileMenuToggle();

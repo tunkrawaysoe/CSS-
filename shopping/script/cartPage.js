@@ -6,6 +6,7 @@ import {
   updateTotals
 } from "../data/cart.js";
 import { products } from "../data/products.js";
+import { initMobileMenuToggle } from "./util.js";
 
 const cartContainer = document.querySelector(".js-cart-items");
 const subtotalEl = document.querySelector(".js-subtotal");
@@ -13,7 +14,6 @@ const taxesEl = document.querySelector(".js-taxes");
 const totalEl = document.querySelector(".js-total");
 
 function renderCart() {
-  // Render navbar
   document.querySelector(".js-navbar").innerHTML = renderNavBarWithCartQty();
 
   if (cart.length === 0) {
@@ -44,7 +44,9 @@ function renderCart() {
           <img src="${product.images[0]}" alt="${product.name}" class="h-20 w-20 rounded object-cover">
           <div class="flex flex-col">
             <p class="font-semibold text-lg">${product.name}</p>
-            <button class="w-max p-1 px-2 mt-2 rounded-sm shadow js-remove" data-product-id="${product.id}">Remove</button>
+            <div><button class="js-remove border-r border-gray-300 pr-4" data-product-id="${product.id}">Remove</button>
+            <button class="pl-4" > Save for Later</button></div>
+
           </div>
         </div>
 
@@ -118,4 +120,5 @@ function setupCartActions() {
 }
 
 renderCart();
+initMobileMenuToggle();
 updateCartQuantity();

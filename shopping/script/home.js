@@ -1,5 +1,6 @@
 import { products } from "../data/products.js";
 import { updateCartQuantity, addToCart, renderNavBarWithCartQty } from "../data/cart.js";
+import { initMobileMenuToggle } from "./util.js";
 
 document.querySelector('.js-navbar').innerHTML = renderNavBarWithCartQty();
 
@@ -47,5 +48,5 @@ document.querySelectorAll(".js-add-to-cart-btn").forEach(btn => {
     addToCart(productId)
   });
 });
-
+initMobileMenuToggle();
 updateCartQuantity();

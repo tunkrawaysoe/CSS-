@@ -5,6 +5,7 @@ import {
   renderNavBarWithCartQty
 } from "../data/cart.js";
 import { products } from "../data/products.js";
+import { initMobileMenuToggle } from "./util.js";
 
 const cartContainer = document.querySelector(".js-cart-items");
 const subtotalEl = document.querySelector(".js-subtotal");
@@ -128,5 +129,6 @@ function renderCart() {
   updateTotals(subtotalEl, taxesEl, totalEl);
 }
 
+initMobileMenuToggle();
 renderCart();
 updateCartQuantity();

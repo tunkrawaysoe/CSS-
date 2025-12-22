@@ -55,12 +55,19 @@ export function renderNavBarWithCartQty() {
             Contact Us
           </a>
 
-          <!-- Contact (Mobile) -->
-          <a href="#contact"
-            class="md:hidden flex items-center gap-2 text-[#714e62] font-medium hover:text-[#5f4052]">
-            <i class="bi bi-envelope"></i>
-            <span>Contact</span>
-          </a>
+         <!-- Mobile Menu Button -->
+          <button id="menu-btn"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+            <i class="bi bi-list text-xl"></i>
+          </button>
+          <!-- Mobile Menu (hidden by default) -->
+           
+            <div class="js-mobile-menu hidden fixed top-0 w-1/2 bg-white shadow p-4 space-y-2 z-40">
+              <a href="home.html" class="block hover:text-indigo-600">Home</a>
+              <a href="#" class="block hover:text-indigo-600">Shop</a>
+              <a href="#" class="block hover:text-indigo-600">Contact Us</a>
+            </div>
+
 
         </div>
       </div>
