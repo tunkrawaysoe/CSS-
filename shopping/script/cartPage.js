@@ -98,7 +98,7 @@ function setupCartActions() {
         cart.splice(cart.indexOf(cartItem), 1);
       }
 
-      saveCart(cartItem)
+      saveCart(cart)
       renderCart();
       updateCartQuantity();
     });
